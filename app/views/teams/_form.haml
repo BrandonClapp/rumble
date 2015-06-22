@@ -1,0 +1,11 @@
+= form_for :team, :url => { :action => "create" } do |f|
+  %p
+  Team Name
+  = f.text_field :name 
+
+  %p
+  Team Tag
+  = f.text_field :tag
+
+  %p
+  = f.submit

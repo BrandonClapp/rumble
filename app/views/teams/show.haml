@@ -1,0 +1,10 @@
+%h1 Team Details
+%p= @team.name
+
+%h3 Roster
+%p 
+  - @team.users.each do |member|
+    = @team.tag
+    = member.email
+
+%p= link_to "All Teams", teams_path
