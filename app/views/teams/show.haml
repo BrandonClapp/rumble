@@ -5,6 +5,6 @@
 %p 
   - @team.users.each do |member|
     = @team.tag
-    = member.email
+    = member.name
 
 %p= link_to "All Teams", teams_path
