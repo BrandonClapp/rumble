@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'pages#news'
   devise_for :users
-  root 'teams#index'
+
+  #root 'teams#index'
   resources :teams
   resources :users
 end
