@@ -1,10 +1,12 @@
-%h1 Team Details
-%p= @team.name
+.container-fluid
+  .well.well-small
+    %a= link_to "All Teams", teams_path
 
-%h3 Roster
-%p 
-  - @team.users.each do |member|
-    = @team.tag
-    = member.name
+  %h1 Team Details
+  %p= @team.name
 
-%p= link_to "All Teams", teams_path
+  %h3 Roster
+  %p 
+    - @team.users.each do |member|
+      = @team.tag
+      = member.name

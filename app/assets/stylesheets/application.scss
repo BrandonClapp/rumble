@@ -11,6 +11,13 @@
  * file per style scope.
  *
  * require import_bootstrap
- *= require_tree .
+ *= require themes/slate
+ *= require_tree
  *= require_self
  */
+
+ .logo {
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: bold;
+ }

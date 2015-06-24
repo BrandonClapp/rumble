@@ -1,11 +1,11 @@
 = form_for :team, :url => { :action => "create" } do |f|
-  %p
-  Team Name
-  = f.text_field :name 
+  %p.form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
 
-  %p
-  Team Tag
-  = f.text_field :tag
+  %p.form-group
+    = f.label :tag
+    = f.text_field :tag, class: "form-control"
 
-  %p
-  = f.submit
+  %p.form-group
+    = f.submit "Create Team", class: "btn btn-default"
