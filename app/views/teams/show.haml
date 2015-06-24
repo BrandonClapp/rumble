@@ -1,5 +1,5 @@
 .container-fluid
-  .well.well-small
+  .well.well-sm
     %a= link_to "All Teams", teams_path
 
   %h1 Team Details
@@ -9,4 +9,4 @@
   %p 
     - @team.users.each do |member|
       = @team.tag
-      = member.name
+      = link_to member.name, user_path(member)

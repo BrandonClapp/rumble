@@ -1,4 +1,22 @@
 .container-fluid
-  %h1 Teams
-  - @teams.each do |team|
-    %p= link_to team.name, team_path(team)
+  .panel.panel-primary
+    .panel-heading
+      %h3.panel-title.pull-left
+        Teams
+      .pull-right
+        = link_to "New Team", new_team_path, class: "btn btn-default btn-xs"
+      .clearfix
+    .panel-body.secondary-bg
+      %table.table.table-bordered.table-hover.table-striped.table-condensed
+        %tr
+          %th Team Name
+          %th Members
+        - @teams.each do |team|
+          %tr
+            %td= link_to team.name, team_path(team)
+            %td= team.users.count
+    .panel-footer
+      = @teams.count 
+      teams
+
+  
