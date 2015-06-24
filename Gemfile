@@ -13,7 +13,7 @@ gem 'devise', '~> 3.5.1'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 group :development, :test do
-  gem 'byebug'
+  #gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
