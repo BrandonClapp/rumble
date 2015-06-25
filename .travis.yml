@@ -3,6 +3,8 @@ deploy:
   provider: heroku
   api_key:
     secure: Gwb/ANdxXd3pxefKfwFJsDphncWc8Mu6eq9Dk2PrCPq7AyxCWEzxPOGZMHwp5F5bp+rAEn5WtF0FXn0VufIylnJj54nSo0euR6sPBRFCY7QWq4C578GybZb8Ng/yyKYulCLeiTzNNeS4hZF2tc4BeJHbr4Lewnp9lsomOqA46QMZmX6Or7p7MO6mZ1F/zMv7Yr+anSbISg+t82GzT2jx5WBmm7gUyZnclK0fiAgGp05ZU8yMYpHNBIjRe1InKeuWF0Q1j5SqQvhIGndeNl+1r/7xmleCLxEO9I77ZuwhU2lqYiJRC32Aicym/wsJWJpOjjCzs/60KP5qlRtD3NVAVMUGi9QE8fzMqzWU4XufOxGEEOJ9ljP687FGo69juzsMQUpa4YNB7gbpI+Cj7GaGKb0c9dTs1cUd4T0MTbzTfeqwh0JNy7eVj8fTOGigfdblXBQRoZmwqC/R24iy+mBELu7iHzfSK24C/p82UyoeUnSn8ZBc9vN6y41wWBThdLBchoZrClhcbkNQP+ItkqzQZSFP7QRACoevWH562SDfZ6oh3SyH3HTLCgdMVX3rlKmazhlbes/TYktZjJKkDhIvIT4BBgBJPTxr0p2bBg9ArfV6S6mWO/hqT1Aya7XCbcgtFKkyBU45HbWAIK2Lp+PNxSduV+VTbrh3Nqzuhl24XW4=
+  run:
+    - "rake db:migrate"
   app: gamingladder
   on:
     repo: BrandonClapp/ladder
