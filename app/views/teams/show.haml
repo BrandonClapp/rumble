@@ -2,11 +2,24 @@
   .well.well-sm
     %a= link_to "All Teams", teams_path
 
-  %h1 Team Details
-  %p= @team.name
+  %h1= @team.name
 
-  %h3 Roster
-  %p 
-    - @team.users.each do |member|
-      = @team.tag
-      = link_to member.name, user_path(member)
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title
+        Members
+    .panel-body
+      - if @team.users.empty?
+        No members
+      - else
+        %table.table.table-condensed.table-striped.table-hover
+          %tr
+            %th Name
+            %th Email
+          - @team.users.each do |member|
+            %tr
+              %td
+                = @team.tag
+                = link_to member.name, user_path(member)
+              %td
+                = member.email
