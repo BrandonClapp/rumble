@@ -10,6 +10,7 @@
     .container
       .navbar-brand= link_to "Ladder", root_path, class: "logo"
       %ul.nav.navbar-nav.navbar-right
+        %li= link_to "Leagues", leagues_path
         - if user_signed_in?
           %li= link_to current_user.name, user_path(current_user)
           %li= link_to "Sign Out", destroy_user_session_path, method: :delete
