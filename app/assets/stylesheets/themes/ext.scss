@@ -1,5 +1,8 @@
-$primary-one: #2c3e50;
-$primary-two: #DD333E;
+$primary-one: #003366;
+$primary-two: #800000;
+
+$secondary-two: #800000;
+
 $neutral-one: #202020;
 $neutral-two: #B6B6B6;
 $neutral-three: #F0F0F0;
@@ -88,6 +91,11 @@ table.table {
   border-radius: 4px;
 }
 
+.content-two {
+  background-color: $primary-one;
+  border-radius: 4px;
+}
+
 // /* Bootstrap overrides */
 
 .navbar-default {
@@ -98,10 +106,13 @@ table.table {
 }
 
 .navbar {
-  background-image: -webkit-linear-gradient($primary-one, $primary-one 60%, $primary-one);
-  background-image: -o-linear-gradient($primary-one, $primary-one 60%, $primary-one);
-  background-image: -webkit-gradient(linear, left top, left bottom, from($primary-one), color-stop(60%, $primary-one), to($primary-one));
-  background-image: linear-gradient($primary-one, $primary-one 60%, $primary-one);
+  // background-image: -webkit-linear-gradient($primary-one, $primary-one 60%, $primary-one);
+  // background-image: -o-linear-gradient($primary-one, $primary-one 60%, $primary-one);
+  // background-image: -webkit-gradient(linear, left top, left bottom, from($primary-one), color-stop(60%, $primary-one), to($primary-one));
+  // background-image: linear-gradient($primary-one, $primary-one 60%, $primary-one);
+  // background-repeat: no-repeat;
+
+  background-image: linear-gradient($primary-two, $secondary-two 60%, $primary-two);
   background-repeat: no-repeat;
 }
 
@@ -126,3 +137,16 @@ table {
 //   border-color: $primary-one;
 // }
 
+.panel-default {
+
+  background-color: $neutral-one;
+
+  .panel-heading {
+    background-color: $primary-one;
+  }
+
+  .panel-footer {
+    //background-color: $primary-one;
+  }
+
+}
