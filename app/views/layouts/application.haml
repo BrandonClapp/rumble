@@ -6,9 +6,12 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  %nav.navbar.navbar-default
+  .background.primary-two-bg
+    .dot
+    // = video_tag("bgvideoa.mp4", :autoplay => true, :loop => true)
+  %nav.navbar.navbar-inverse
     .container
-      .navbar-brand= link_to "Ladder", root_path, class: "logo"
+      .navbar-brand= link_to "Ladder", root_path, class: "logo neutral-three-text"
       %ul.nav.navbar-nav.navbar-right
         %li= link_to "Leagues", leagues_path
         - if user_signed_in?
@@ -18,7 +21,7 @@
           %li= link_to "Sign Up", new_user_registration_path
           %li= link_to "Sign In", new_user_session_path 
   
-  .container-fluid
-    - flash.each do |name, msg|
-      = content_tag :div, msg, class: 'alert alert-info'
-    = yield
+  
+  - flash.each do |name, msg|
+    = content_tag :div, msg, class: 'alert alert-info'
+  = yield
