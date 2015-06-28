@@ -31,23 +31,16 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
       </div>
-
       
-    
-    </div>
-
-    <div class="panel-footer">
-      <div class="pull-left">
+      <div>
+        <%= f.submit "Sign up", class: 'btn btn-success' %>
+      </div>
+      
+      <div>
         Already a member? <%= link_to "Log in.", new_user_session_path %>
       </div>
 
-      <div class="pull-right">
-        <%= f.submit "Sign up", class: 'btn btn-success' %>
-      </div>
-      <div class="clearfix"></div>
       <% end %>
-
-    
     </div>
 
   </div>
