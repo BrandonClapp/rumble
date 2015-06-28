@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 .main-banner {
-    background: url('/assets/slide9.jpg');
+    background: asset-url('slide9.jpg');
     background-size: cover;
     background-position: left top;
     height: 560px;
@@ -82,7 +82,7 @@
     }
 
     .secondary-cta-left {
-        background: url(/assets/slide11.jpg);
+        background: asset-url('slide11.jpg');
         background-size:cover;
         background-position: bottom;
         max-width: 542px;
@@ -93,7 +93,7 @@
     }
 
     .secondary-cta-right {
-        background: url(/assets/slide12.jpg);
+        background: asset-url('slide12.jpg');
         background-size:cover;
         background-position: bottom;
         max-width: 542px;
