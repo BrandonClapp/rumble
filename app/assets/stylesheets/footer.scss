@@ -1,0 +1,52 @@
+.main-footer {
+  color: #fff;
+  background: url('/assets/footer7.jpg');
+  background-size: cover;
+  background-position: top;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  a:hover {
+    color: lighten($primary-dark-blue, 80%);
+  }
+
+  border-top: 3px solid lighten($primary-dark-blue, 20%);
+  margin-top: $section-margin;
+  height: 300px;
+  width: 100%;
+
+  .main-footer-film {
+    background: rgba(0, 0, 0, .7);
+    transition: 0.4s all ease-in;
+    height: 300px;
+    padding-top: 1px;
+
+    &:hover {
+      background: rgba(0, 0, 0, .4);
+      transition: 0.4s all ease-in;
+    }
+
+    h1 {
+      span {
+        font-weight: 400;
+      }
+    }
+
+    .col {
+      width: 250px;
+      float: left;
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          font-size: 14px;
+          list-style: none;
+          margin-bottom: 7px;
+        }
+      }
+    }
+  }
+
+}

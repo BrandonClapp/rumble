@@ -1,0 +1,10 @@
+$primary-dark-blue: #0a0f18;
+$primary-dark-red: #2A0D45; //  2A0D45
+
+$content-max-width: 1100px;
+$section-margin: 50px;
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}

@@ -10,12 +10,5 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree
- *= require_self
+ *= require "main"
  */
-
- .logo {
-  text-transform: uppercase;
-  letter-spacing: 0px;
-  font-weight: bold;
- }

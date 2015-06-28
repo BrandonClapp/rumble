@@ -1,0 +1,114 @@
+@import "normalize.css";
+@import "http://fonts.googleapis.com/css?family=Oswald:400,300,700";
+@import "http://fonts.googleapis.com/css?family=Roboto:400,500,700,300";
+@import "variables.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+
+body {
+    background: $primary-dark-blue;
+    font-size: 14px;
+    color: #fff;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($primary-dark-blue, 80%);
+  }
+}
+
+h1 {
+  color: lighten($primary-dark-blue, 80%);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  margin: 20px 0 20px 0;
+}
+
+h2 {
+  color: lighten($primary-dark-blue, 80%);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 20px 0 20px 0;
+}
+
+h3 {
+  color: lighten($primary-dark-blue, 80%);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 20px 0 20px 0;
+}
+
+h4 {
+  color: lighten($primary-dark-blue, 80%);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 20px 0 20px 0;
+}
+
+table {
+  width: 100%;
+  font-size: 14px;
+
+  thead, th, {
+    vertical-align: middle;
+    border-color: inherit;
+    text-align: left;
+    background-color: $primary-dark-red;
+    padding: 8px;
+  }
+
+  td {
+   vertical-align: middle;
+    border-color: inherit;
+    text-align: left;
+    padding: 8px; 
+  }
+
+  tr {
+    height: 30px;
+  }
+
+  tr:nth-child(even) {
+    background-color: darken($primary-dark-red, 7%);
+  }
+
+  tr:nth-child(odd) {
+    background-color: darken($primary-dark-blue, 50%);
+  }
+}
+
+.container {
+    max-width: $content-max-width;
+    width: 90%;
+    margin: 0 auto;
+
+    .content {
+      margin-top: -400px;
+      min-height: 400px;
+      // padding: 20px;
+      border-radius: 4px;
+
+      .dark {
+        background: rgba(0, 0, 0, .75);
+        padding: 15px;
+      }
+    }
+
+    p {
+      line-height: 25px;
+    }
+}
+
+.clear {
+  clear: both;
+}

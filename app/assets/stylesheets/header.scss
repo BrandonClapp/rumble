@@ -1,0 +1,52 @@
+
+
+.top-bar {
+    @include background-opacity($primary-dark-red, 0.7);
+
+    top: 0;
+    right:0;
+    left: 0;
+    height: 80px;
+    position:fixed;
+
+    border-bottom: 3px solid darken($primary-dark-red, 10%);
+
+    .logo {
+        float: left;
+        // @include background-opacity(white, 0.9);
+        // border-left: 3px solid darken($primary-dark-red, 10%);
+        // border-right: 3px solid darken($primary-dark-red, 10%);
+        // border-bottom: 3px solid darken($primary-dark-red, 10%);
+
+        padding-top: 20px;
+
+        a img {
+            height: 41px;
+        }
+    }
+
+    .main-nav {
+        float: right;
+
+        ul {
+            list-style: none;
+            padding-top: 15px;
+
+            li {
+                display: inline-block;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                font-size: 16px;
+                padding-left: 30px;
+
+                a {
+                    &:hover {
+                        border-bottom: 1px solid #fff;
+                        padding-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
