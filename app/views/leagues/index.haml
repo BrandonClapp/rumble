@@ -1,9 +1,13 @@
-.container
+.main-banner
+  .main-banner-film
 
-  %h2 Leagues
+.container
+  .content
   
-  %ul
-    - @leagues.each do |league|
-      %li= link_to league.name, league_path(league)
+    %h2 Leagues
   
-  = link_to "New League", new_league_path
+    %ul
+      - @leagues.each do |league|
+        %li= link_to league.name, league_path(league)
+    
+    = link_to "New League", new_league_path

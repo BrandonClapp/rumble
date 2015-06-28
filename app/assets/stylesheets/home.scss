@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .main-banner {
     background: url('/assets/slide9.jpg');
     background-size: cover;
@@ -39,11 +41,10 @@
       letter-spacing: 2px;
       border: 2px solid #fff;
       background: lighten($primary-dark-blue, 10%);
-      transition: 0.4s all ease-in;
 
       &:hover {
           background: $primary-dark-red;
-          transition: 0.4s all ease-in;
+          transition: 0.4s background ease-in;
       }
   }
 }
