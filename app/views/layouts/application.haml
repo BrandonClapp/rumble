@@ -7,44 +7,13 @@
   = csrf_meta_tags
 %body
 
-  .top-bar
-    .container
-      .logo
-        = link_to image_tag('logo2.png'), root_path
-      %nav.main-nav
-        %ul
-          %li= link_to "Leagues", leagues_path
-          - if user_signed_in?
-            %li= link_to current_user.name, user_path(current_user)
-            %li= link_to "Sign Out", destroy_user_session_path, method: :delete
-          - else
-            %li= link_to "Sign Up", new_user_registration_path
-            %li= link_to "Sign In", new_user_session_path 
+  = render "layouts/header"
 
-  .main-banner
-    .main-banner-film
-      %h1 Welcome to the League
-      %p Compete against other teams for bragging rights.
-      %button.main-cta Start Here
-
-  %section.secondary-cta
-    .container
-      .secondary-cta-left
-        %button.secondary-cta-button World of Warcraft
-
-      .secondary-cta-right
-        %button.secondary-cta-button Starcraft 2
-
-      .clear
-
-  %footer.main-footer
-    .main-footer-film
-      .container
-        %h1
-          %span The
-          League
-  
-  
   - flash.each do |name, msg|
     = content_tag :div, msg, class: 'alert alert-info'
+
   = yield
+
+  = render "layouts/footer"
+  
+  
