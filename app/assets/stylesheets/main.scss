@@ -22,6 +22,12 @@ a {
   }
 }
 
+form {
+  input {
+    background-color: #000;
+  }
+}
+
 h1 {
   color: lighten($primary-dark-blue, 80%);
   font-family: 'Oswald', sans-serif;

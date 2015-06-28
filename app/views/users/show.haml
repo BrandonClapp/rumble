@@ -1,5 +1,11 @@
-.container
-  %h2= @user.name
+.main-banner
+  .main-banner-film
 
-  - if @user == current_user
-    %p= link_to "Edit Account", edit_user_registration_path
+.container
+  .content
+
+    %h2= @user.name
+
+    - if @user == current_user
+      .dark
+        %p= link_to "Edit Account", edit_user_registration_path
