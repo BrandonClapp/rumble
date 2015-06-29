@@ -1,25 +1,27 @@
-.container.content
-  .well.well-sm{ style: "margin-top: 15px;" }
-    %a= link_to "All Teams", teams_path
+.main-banner
+  .main-banner-film
 
-  %h1= @team.name
+.container
+  .content
+    .dark
+      %a= link_to "All Teams", teams_path
 
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title
-        Members
-    .panel-body
-      - if @team.users.empty?
-        No members
-      - else
-        %table.table.table-condensed.table-striped.table-hover
+    %h1= @team.name
+
+    %h3.panel-title
+      Members
+
+    - if @team.users.empty?
+      No members
+    - else
+      %table.table.table-condensed.table-striped.table-hover
+        %tr
+          %th Name
+          %th Email
+        - @team.users.each do |member|
           %tr
-            %th Name
-            %th Email
-          - @team.users.each do |member|
-            %tr
-              %td
-                = @team.tag
-                = link_to member.name, user_path(member)
-              %td
-                = member.email
+            %td
+              = @team.tag
+              = link_to member.name, user_path(member)
+            %td
+              = member.email
