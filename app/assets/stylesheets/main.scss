@@ -116,3 +116,17 @@ table {
 .clear {
   clear: both;
 }
+
+.main-alert-spot {
+  top: 83px;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  border-bottom: 3px solid darken($primary-dark-red, 10%);
+}
+
+.alert {
+  width: 100%;
+  background-color: $primary-dark-red;
+  padding: 10px;
+}

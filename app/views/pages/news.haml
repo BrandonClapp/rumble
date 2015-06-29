@@ -2,7 +2,9 @@
   .main-banner-film
     %h1 Welcome to the League
     %p Compete against other teams for bragging rights.
-    %button.main-cta Start Here
+    .main-cta
+      = link_to "Teams", teams_path
+    
 
 %section.secondary-cta
   .container

@@ -8,6 +8,7 @@
     left: 0;
     height: 80px;
     position:fixed;
+    z-index:99;
 
     border-bottom: 3px solid darken($primary-dark-red, 10%);
 

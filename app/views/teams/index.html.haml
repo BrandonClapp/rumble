@@ -1,12 +1,12 @@
-.container.content
-  .panel.panel-primary
-    .panel-heading
-      %h3.panel-title.pull-left
-        Teams
-      .pull-right
-        = link_to "New Team", new_team_path, class: "btn btn-default btn-xs"
-      .clearfix
-    .panel-body.secondary-bg
+.main-banner
+  .main-banner-film
+
+.container
+  .content
+    %h3 Teams
+    = link_to "New Team", new_team_path
+
+    .dark
       %table.table.table-bordered.table-hover.table-striped.table-condensed
         %tr
           %th Team Name
@@ -15,7 +15,6 @@
           %tr
             %td= link_to team.name, team_path(team)
             %td= team.users.count
-    .panel-footer
       = pluralize(@teams.count, "team")
 
   
