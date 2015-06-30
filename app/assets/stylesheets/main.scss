@@ -23,15 +23,44 @@ a {
 }
 
 form {
+
   input {
-    background-color: #000;
+    font-size: 18px;
+    background-color: lighten($primary-dark-blue, 80%);
+    border: 1px solid lighten($primary-dark-red, 10%);
+    color: #000;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      background-color: lighten($primary-dark-blue, 70%);
+    }
+  }
+
+  input[type="submit"] {
+    width: auto;
+    background-color: $primary-dark-red;
+    border: 1px solid lighten($primary-dark-blue, 90%);
+    color: #fff;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      font-weight: 400;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 5px;
+    }
   }
 }
 
 h1 {
   color: lighten($primary-dark-blue, 80%);
   font-family: 'Oswald', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 20px 0 20px 0;
 }
 
@@ -111,6 +140,22 @@ table {
     p {
       line-height: 25px;
     }
+}
+
+.half {
+  width: 50%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.right {
+  float:right;
+}
+
+.left {
+  float:left;
 }
 
 .clear {

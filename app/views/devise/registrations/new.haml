@@ -2,35 +2,28 @@
   .main-banner-film
 
 .container
-  .content
-
-    .col-md-6.col-md-offset-3
-      .panel.panel-success
-        .panel-heading
-          %h2.panel-title Sign up
-        .panel-body
-          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            = devise_error_messages!
-            .form-group
-              = f.label :name
-              %br/
-              = f.text_field :name, autofocus: true, class: 'form-control'
-            .form-group
-              = f.label :email
-              %br/
-              = f.email_field :email, class: 'form-control'
-            .form-group
-              = f.label :password
-              - if @minimum_password_length
-                %em
-                  (#{@minimum_password_length} characters minimum)
-              %br/
-              = f.password_field :password, autocomplete: "off", class: 'form-control'
-            .form-group
-              = f.label :password_confirmation
-              %br/
-              = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-            %div
-              = f.submit "Sign up", class: 'btn btn-success'
-            %div
-              Already a member? #{link_to "Log in.", new_user_session_path}
+  .content.half.center
+    .dark
+      %h2.panel-title Sign up
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .form-group
+          = f.label :name
+          = f.text_field :name, autofocus: true, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          = f.password_field :password, autocomplete: "off", class: 'form-control'
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+        .right
+          = f.submit "Sign up", class: 'btn btn-success'
+        .left
+          Already a member? #{link_to "Log in.", new_user_session_path}
+        .clear
