@@ -11,10 +11,12 @@
         %tr
           %th Team Name
           %th Members
+          %th Leagues
         - @teams.each do |team|
           %tr
             %td= link_to team.name, team_path(team)
             %td= team.users.count
+            %td Leagues where this team is a member of a ladder/tournament/season.
       = pluralize(@teams.count, "team")
 
   
