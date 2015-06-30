@@ -57,6 +57,12 @@ form {
   }
 }
 
+.alt {
+  color: #000;
+  background-color: #fff;
+  border-color: 1px solid $primary-dark-red;
+}
+
 h1 {
   color: lighten($primary-dark-blue, 80%);
   font-family: 'Oswald', sans-serif;
@@ -132,7 +138,7 @@ table {
       border-radius: 4px;
 
       .dark {
-        background: rgba(0, 0, 0, .75);
+        background: rgba(0, 0, 0, .6);
         padding: 15px;
       }
     }
@@ -144,6 +150,10 @@ table {
 
 .half {
   width: 50%;
+}
+
+.three-quarters {
+  width: 75%;
 }
 
 .center {
