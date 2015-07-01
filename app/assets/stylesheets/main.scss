@@ -175,7 +175,7 @@ table {
 .main-alert-spot {
   top: 83px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 0;
   border-bottom: 3px solid darken($primary-dark-red, 10%);
 }

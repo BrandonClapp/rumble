@@ -4,6 +4,7 @@
       = link_to image_tag('logo2.png'), root_path
     %nav.main-nav
       %ul
+        %li= link_to "Teams", teams_path
         %li= link_to "Leagues", leagues_path
         - if user_signed_in?
           %li= link_to current_user.name, user_path(current_user)

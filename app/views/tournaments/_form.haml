@@ -25,7 +25,8 @@
 
   .form-group
     = f.label :league_id
-    = f.text_field :league_id
+    -# = f.text_field :league_id
+    = f.select :league_id, options_for_select(League.all.map{|l|[l.name, l.id]}, @tournament.league_id)
   .actions.right
     = f.submit
   .clear
