@@ -24,7 +24,7 @@ a {
 
 form {
 
-  input {
+  input, select {
     font-size: 18px;
     background-color: lighten($primary-dark-blue, 80%);
     border: 1px solid lighten($primary-dark-red, 10%);

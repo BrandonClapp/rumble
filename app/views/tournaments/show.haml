@@ -1,0 +1,27 @@
+.main-banner
+  .main-banner-film
+
+.container
+  .content
+
+    %p#notice= notice
+
+    %p
+      %strong Enabled:
+      = @tournament.enabled?
+
+    %p
+      %strong Name:
+      = @tournament.name
+    %p
+      %strong Tournament type:
+      = @tournament.tournament_type
+    %p
+      %strong Team size:
+      = @tournament.team_size
+    %p
+      %strong League:
+      = @tournament.league.name
+    = link_to 'Edit', edit_tournament_path(@tournament)
+    |
+    \#{link_to 'Back', tournaments_path}

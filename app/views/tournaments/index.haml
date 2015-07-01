@@ -1,0 +1,32 @@
+.main-banner
+  .main-banner-film
+
+.container
+  .content
+
+    %p#notice= notice
+    %h1 Listing Tournaments
+
+    .dark
+      %table
+        %thead
+          %tr
+            %th Enabled
+            %th Name
+            %th Tournament type
+            %th Team size
+            %th League
+            %th{:colspan => "3"}
+        %tbody
+          - @tournaments.each do |tournament|
+            %tr
+              %td= tournament.enabled ? "Yes" : "No"
+              %td= tournament.name
+              %td= tournament.tournament_type
+              %td= tournament.team_size
+              %td= tournament.league.name
+              %td= link_to 'Show', tournament
+              %td= link_to 'Edit', edit_tournament_path(tournament)
+              %td= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' }
+      %br
+        = link_to 'New Tournament', new_tournament_path

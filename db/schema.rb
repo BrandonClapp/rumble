@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 20150701013840) do
   end
 
   create_table "tournaments", force: :cascade do |t|
+    t.boolean  "enabled"
     t.string   "name"
-    t.string   "tournament_type"
+    t.integer  "tournament_type", default: 0
+    t.integer  "team_size"
     t.integer  "league_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "tournaments", ["league_id"], name: "index_tournaments_on_league_id"
