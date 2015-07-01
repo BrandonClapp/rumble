@@ -15,7 +15,7 @@
       = @tournament.name
     %p
       %strong Tournament type:
-      = @tournament.tournament_type
+      = @tournament.tournament_type.humanize.titleize
     %p
       %strong Team size:
       = @tournament.team_size

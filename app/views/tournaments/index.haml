@@ -22,7 +22,7 @@
             %tr
               %td= tournament.enabled ? "Yes" : "No"
               %td= tournament.name
-              %td= tournament.tournament_type
+              %td= tournament.tournament_type.humanize.titleize
               %td= tournament.team_size
               %td= tournament.league.name
               %td= link_to 'Show', tournament
