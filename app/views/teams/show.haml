@@ -6,36 +6,57 @@
     .dark
       %a= link_to "All Teams", teams_path
 
-    %h1= @team.name
+      %h1= @team.name
 
-    %h2 Members
+      %h2 Members
 
-    - if @team.users.empty?
-      No members
-    - else
-      %table
-        %tr
-          %th Name
-          %th Email
-        - @team.users.each do |member|
+      - if @team.users.empty?
+        No members
+      - else
+        %table
           %tr
-            %td
-              = @team.tag
-              = link_to member.name, user_path(member)
-            %td
-              = member.email
+            %th Name
+            %th Email
+          - @team.users.each do |member|
+            %tr
+              %td
+                = @team.tag
+                = link_to member.name, user_path(member)
+              %td
+                = member.email
 
-    %h2 Tournaments
-    - if @team.tournaments.empty?
-      No tournaments
-    - else
-      %table
-        %tr
-          %th Tournament
-          %th League
-        - @team.tournaments.each do |tournament|
+      %h2 Tournaments
+      - if @team.tournaments.empty?
+        No tournaments
+      - else
+        %table
           %tr
-            %td
-              = link_to tournament.name, tournament_path(tournament)
-            %td
-              = link_to tournament.league.name, league_path(tournament.league)
+            %th Tournament
+            %th League
+          - @team.tournaments.each do |tournament|
+            %tr
+              %td
+                = link_to tournament.name, tournament_path(tournament)
+              %td
+                = link_to tournament.league.name, league_path(tournament.league)
+      
+      %h2 Latest Matches
+      - if @team.matches.empty?
+        No previous matches
+      - else
+        %table
+          %tr
+            %th Opponent
+            %th Result
+            %th Tournament
+            %th League
+            %th Date
+            %th Role
+          - @team.matches.order('match_date DESC').each do |match|
+            %tr
+              %td= link_to @team.opponent_for(match).name, team_path(@team.opponent_for(match))
+              %td Result
+              %td= link_to match.tournament.name, tournament_path(match.tournament)
+              %td= link_to match.tournament.league.name, league_path(match.tournament.league)
+              %td= match.match_date
+              %td= @team.role_for(match)
