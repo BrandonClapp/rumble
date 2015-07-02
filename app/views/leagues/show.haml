@@ -6,3 +6,23 @@
     %h1
       = @league.name 
       Details
+
+    .dark
+      %h2 Tournaments
+      - if @league.tournaments.empty?
+        No tournaments currently in this league.
+      - else
+        %table
+          %tr
+            %th Tournament Name
+            %th Type
+            %th Started
+            %th Ends
+            %th Teams
+          - @league.tournaments.each do |tournament|
+            %tr
+              %td= link_to tournament.name, tournament_path(tournament)
+              %td= tournament.tournament_type
+              %td Start
+              %td End
+              %td= tournament.teams.count

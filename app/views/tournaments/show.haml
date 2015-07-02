@@ -3,25 +3,39 @@
 
 .container
   .content
+    .dark
+      %p#notice= notice
 
-    %p#notice= notice
+      %p
+        %strong Enabled:
+        = @tournament.enabled?
 
-    %p
-      %strong Enabled:
-      = @tournament.enabled?
+      %p
+        %strong Name:
+        = @tournament.name
+      %p
+        %strong Tournament type:
+        = @tournament.tournament_type.humanize.titleize
+      %p
+        %strong Team size:
+        = @tournament.team_size
+      %p
+        %strong League:
+        = @tournament.league.name
+      = link_to 'Edit', edit_tournament_path(@tournament)
+      |
+      \#{link_to 'Back', tournaments_path}
 
-    %p
-      %strong Name:
-      = @tournament.name
-    %p
-      %strong Tournament type:
-      = @tournament.tournament_type.humanize.titleize
-    %p
-      %strong Team size:
-      = @tournament.team_size
-    %p
-      %strong League:
-      = @tournament.league.name
-    = link_to 'Edit', edit_tournament_path(@tournament)
-    |
-    \#{link_to 'Back', tournaments_path}
+    .dark
+      %h2 Teams
+      - if @tournament.teams.empty?
+        No teams in this tournament.
+      - else
+        %table
+          %tr
+            %th Tag
+            %th Team Name
+          - @tournament.teams.each do |team|
+            %tr
+              %td= team.tag
+              %td= link_to team.name, team_path(team)
