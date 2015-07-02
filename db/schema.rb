@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150702025301) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.date     "match_date"
+    t.datetime "match_date"
     t.integer  "initiating_team_id"
     t.integer  "defending_team_id"
     t.integer  "tournament_id"

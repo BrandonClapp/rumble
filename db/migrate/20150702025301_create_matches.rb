@@ -1,7 +1,7 @@
 class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
-      t.date :match_date
+      t.datetime :match_date
       t.references :initiating_team
       t.references :defending_team
       t.references :tournament
