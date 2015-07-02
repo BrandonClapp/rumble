@@ -36,6 +36,6 @@
         - @team.tournaments.each do |tournament|
           %tr
             %td
-              = tournament.name
+              = link_to tournament.name, tournament_path(tournament)
             %td
-              = tournament.league.name
+              = link_to tournament.league.name, league_path(tournament.league)

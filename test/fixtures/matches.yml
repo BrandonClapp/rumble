@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  match_date: 2015-07-01
+  initiating_team: 
+  defending_team: 
+
+two:
+  match_date: 2015-07-01
+  initiating_team: 
+  defending_team: 
