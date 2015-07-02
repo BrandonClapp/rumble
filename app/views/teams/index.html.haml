@@ -7,16 +7,17 @@
     = link_to "New Team", new_team_path
 
     .dark
-      %table.table.table-bordered.table-hover.table-striped.table-condensed
+      %table
         %tr
           %th Team Name
           %th Members
-          %th Leagues
+          %th Tournaments
         - @teams.each do |team|
           %tr
             %td= link_to team.name, team_path(team)
             %td= team.users.count
-            %td Leagues where this team is a member of a ladder/tournament/season.
+            %td= team.tournaments.count
+              
       = pluralize(@teams.count, "team")
 
   

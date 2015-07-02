@@ -8,13 +8,12 @@
 
     %h1= @team.name
 
-    %h3.panel-title
-      Members
+    %h2 Members
 
     - if @team.users.empty?
       No members
     - else
-      %table.table.table-condensed.table-striped.table-hover
+      %table
         %tr
           %th Name
           %th Email
@@ -25,3 +24,18 @@
               = link_to member.name, user_path(member)
             %td
               = member.email
+
+    %h2 Tournaments
+    - if @team.tournaments.empty?
+      No tournaments
+    - else
+      %table
+        %tr
+          %th Tournament
+          %th League
+        - @team.tournaments.each do |tournament|
+          %tr
+            %td
+              = tournament.name
+            %td
+              = tournament.league.name
