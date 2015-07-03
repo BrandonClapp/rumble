@@ -6,4 +6,12 @@ class User < ActiveRecord::Base
 
   has_many :memberships, :dependent => :destroy
   has_many :teams, through: :memberships
+
+  def is_member_of?(team)
+    if !self.teams.empty?    
+      self.teams.exists?(id: team.id)
+    else
+      false
+    end
+  end
 end

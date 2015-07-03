@@ -12,7 +12,7 @@ gem 'devise', '~> 3.5.1'
 gem 'font-awesome-rails', '~> 4.3.0.0'
 
 group :development, :test do
-  #gem 'byebug'
+  # gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'

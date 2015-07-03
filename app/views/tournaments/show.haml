@@ -3,6 +3,7 @@
 
 .container
   .content
+  
     .dark
       %p#notice= notice
 
@@ -27,15 +28,23 @@
       \#{link_to 'Back', tournaments_path}
 
     .dark
-      %h2 Teams
-      - if @tournament.teams.empty?
-        No teams in this tournament.
+      %h2
+        = @tournament.name
+        Standings
+      - if @tournament.tournament_team_standings.empty?
+        No tournament standings.
       - else
         %table
           %tr
-            %th Tag
+            %th Rank
             %th Team Name
-          - @tournament.teams.each do |team|
+            %th Points
+            %th
+          - @tournament.tournament_team_standings.order('points DESC').each_with_index do |standing, index|
             %tr
-              %td= team.tag
-              %td= link_to team.name, team_path(team)
+              %td= index + 1
+              %td= standing.team.name
+              %td= standing.points
+              %td= "Challenge" unless current_user.is_member_of?(standing.team)
+
+                  
