@@ -8,6 +8,8 @@
     = @user.email
     = @user.role
 
-    - if policy(@user).update?
+    - if policy(@user).edit?
       .dark
-        %p= link_to "Edit Account", edit_user_registration_path
+        %p= link_to "Change Personal Info & Password", edit_user_registration_path
+        - if current_user.admin?
+          %p= link_to "User Administration", edit_user_path(@user)
