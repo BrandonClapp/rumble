@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  after_initialize :set_default_role, :if => :new_record?
+
   enum role: {user: 0, community_manager: 10, admin: 20 }
 
   # Include default devise modules. Others available are:
@@ -36,6 +38,12 @@ class User < ActiveRecord::Base
     else
       false
     end
+  end
+
+  private
+
+  def set_default_role
+    self.role ||= :user
   end
 
 end
