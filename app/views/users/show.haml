@@ -5,7 +5,9 @@
   .content
 
     %h2= @user.name
+    = @user.email
+    = @user.role
 
-    - if @user == current_user
+    - if policy(@user).update?
       .dark
         %p= link_to "Edit Account", edit_user_registration_path
