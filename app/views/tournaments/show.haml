@@ -37,14 +37,20 @@
         %table
           %tr
             %th Rank
+            %th Tag
             %th Team Name
             %th Points
+            %th Record
+            %th Streak
             %th
           - @tournament.tournament_team_standings.order('points DESC').each_with_index do |standing, index|
             %tr
               %td= index + 1
-              %td= standing.team.name
+              %td= standing.team.tag
+              %td= link_to standing.team.name, team_path(standing.team)
               %td= standing.points
+              %td W/L
+              %td +1
               %td= "Challenge" unless current_user.is_member_of?(standing.team)
 
                   

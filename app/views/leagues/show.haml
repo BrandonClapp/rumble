@@ -8,6 +8,8 @@
       Details
 
     .dark
+      = link_to "New Tournament", new_tournament_path
+
       %h2 Tournaments
       - if @league.tournaments.empty?
         No tournaments currently in this league.
