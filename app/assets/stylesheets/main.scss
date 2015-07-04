@@ -121,6 +121,7 @@ h4 {
 table {
   width: 100%;
   font-size: 14px;
+  border: 1px solid lighten($primary-dark-purple, 60%);
 
   thead, th, {
     vertical-align: middle;

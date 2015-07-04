@@ -35,8 +35,10 @@
                   %td= user.email
                   %td
                     = user.role_for(roster).humanize.titleize unless user.role_for(roster).nil?
-                  - if policy(roster).remove_user? and user != current_user
-                    %td= link_to "Remove", team_remove_user_path(@team, roster, user), data: { confirm: "Remove user #{user.name} from the team?" }
+                  - if policy(roster).remove_user?
+                    %td
+                      -if user != current_user
+                        = link_to "Remove", team_remove_user_path(@team, roster, user), data: { confirm: "Remove user #{user.name} from the team?" }
 
 
       %h2 Latest Matches
