@@ -3,9 +3,27 @@
 
 .container
   .content
+    .dark.three-quarters.center
+      %h2 User Administration
 
-    %h2= @user.name
-    = @user.email
-    = @user.role
+      = form_for(@user, url: user_path(@user), html: { method: :put }) do |f|
+        .form-group
+          = f.label :name
+          = f.text_field :name, autofocus: true, class: 'form-control'
 
-    Edit user details here.
+        .form-group
+          = f.label :role
+          = f.select :role, User.roles.map { |r| [r[0].humanize.titleize, r[0]] }
+        
+        .form-group
+          = f.label :teams
+          - if @user.teams.empty?
+            No teams
+          - else
+            %ul
+              - @user.teams.each do |team|
+                %li= link_to team.name, team_path(team)
+
+        = f.submit "Update"
+
+    = button_to "Delete User", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: 'alt'
