@@ -38,4 +38,5 @@ before_filter :set_user, except: [:index]
   def set_user
     @user = User.find(params[:id])
   end
+
 end

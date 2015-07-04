@@ -17,13 +17,16 @@
           %tr
             %th Name
             %th Email
+            %th
           - @team.users.each do |member|
             %tr
               %td
                 = @team.tag
                 = link_to member.name, user_path(member)
+              %td= member.email
               %td
-                = member.email
+                - if policy(@team).edit?
+                  = link_to "Remove", team_user_remove_path(@team, member), data: { confirm: "Remove user #{member.name} from the team?" }
 
       %h2 Tournaments
       - if @team.tournaments.empty?

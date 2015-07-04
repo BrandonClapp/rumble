@@ -23,6 +23,19 @@ before_action :authenticate_user!, except: [:index, :show]
     end
   end
 
+  def remove_user
+    @team = Team.find(params[:team_id])
+    authorize @team
+
+    @user = User.find(params[:id])
+
+    if @user.teams.delete(@team)
+      redirect_to :back, :notice => "User #{@user.name} removed from the team."
+    else
+      redirect_to :back, :notice => "Error while removing the user."
+    end
+  end
+
   private
 
   def team_params
