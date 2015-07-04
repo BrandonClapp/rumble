@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
 
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
@@ -14,12 +13,12 @@ gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'pundit'
 
 group :development, :test do
-  gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
-  gem 'better_errors', '~> 2.1.1'
-  gem 'binding_of_caller', '~> 0.7.2'
+  # gem 'byebug'
+  # gem 'better_errors', '~> 2.1.1'
+  # gem 'binding_of_caller', '~> 0.7.2'
 end
 
 group :production do
