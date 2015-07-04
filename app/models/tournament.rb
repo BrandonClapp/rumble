@@ -8,6 +8,6 @@ class Tournament < ActiveRecord::Base
   belongs_to :league
 
   has_and_belongs_to_many :team_rosters
-  has_many :tournament_team_standings
+  has_many :tournament_standings
 
 end

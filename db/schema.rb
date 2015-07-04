@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704145826) do
+ActiveRecord::Schema.define(version: 20150704152819) do
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
@@ -61,16 +61,16 @@ ActiveRecord::Schema.define(version: 20150704145826) do
   add_index "teams_tournaments", ["team_id"], name: "index_teams_tournaments_on_team_id"
   add_index "teams_tournaments", ["tournament_id"], name: "index_teams_tournaments_on_tournament_id"
 
-  create_table "tournament_team_standings", force: :cascade do |t|
+  create_table "tournament_standings", force: :cascade do |t|
     t.integer  "tournament_id"
-    t.integer  "team_id"
+    t.integer  "roster_id"
     t.integer  "points"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "tournament_team_standings", ["team_id"], name: "index_tournament_team_standings_on_team_id"
-  add_index "tournament_team_standings", ["tournament_id"], name: "index_tournament_team_standings_on_tournament_id"
+  add_index "tournament_standings", ["roster_id"], name: "index_tournament_standings_on_roster_id"
+  add_index "tournament_standings", ["tournament_id"], name: "index_tournament_standings_on_tournament_id"
 
   create_table "tournaments", force: :cascade do |t|
     t.boolean  "enabled"

@@ -19,7 +19,7 @@
             %th Members
           - @team.rosters.each do |roster|
             %tr
-              %td= roster.tournament.name
+              %td= link_to roster.tournament.name, tournament_path(roster.tournament)
               %td= roster.users.count
 
               -#   - if policy(@team).remove_user?

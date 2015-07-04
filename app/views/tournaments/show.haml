@@ -31,7 +31,7 @@
       %h2
         = @tournament.name
         Standings
-      - if @tournament.tournament_team_standings.empty?
+      - if @tournament.tournament_standings.empty?
         No tournament standings.
       - else
         %table
@@ -43,14 +43,15 @@
             %th Record
             %th Streak
             %th
-          - @tournament.tournament_team_standings.order('points DESC').each_with_index do |standing, index|
+          - @tournament.tournament_standings.order('points DESC').each_with_index do |standing, index|
             %tr
               %td= index + 1
-              %td= standing.team.tag
-              %td= link_to standing.team.name, team_path(standing.team)
+              %td= standing.roster.team.tag
+              %td= link_to standing.roster.team.name, team_path(standing.roster.team)
               %td= standing.points
               %td W/L
               %td +1
-              %td= "Challenge" unless current_user.is_member_of?(standing.team)
+              %td
+                -# = "Challenge" unless current_user.is_member_of?(standing.team)
 
                   
