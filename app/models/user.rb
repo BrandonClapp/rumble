@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   has_many :memberships, :dependent => :destroy
   has_many :rosters, through: :memberships
 
-  has_and_belongs_to_many :rosters
 
   def is_member_of?(team)
     if !self.teams.empty?    
@@ -25,8 +24,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  def is_manager_of?(team)
-    # todo: implement me
+  def role_for(roster)
+    membership = self.memberships.find { |m| m.roster == roster }
+    if not membership.nil? and not membership.team_role.nil?
+      membership.team_role.humanize.titleize
+    end
   end
 
   def admin?
