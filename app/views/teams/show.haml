@@ -15,7 +15,10 @@
       - else
         %table
           - @team.rosters.each do |roster|
-            %h4= link_to roster.tournament.name, tournament_path(roster.tournament)
+            %h4.left= link_to roster.tournament.name, tournament_path(roster.tournament)
+
+            .heading.btn.btn-primary.right Join
+            .clear
 
             - if roster.users.empty?
               No members on this roster

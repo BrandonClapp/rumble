@@ -45,7 +45,7 @@
         background: lighten($primary-dark-blue, 10%);
 
         &:hover {
-          background: $primary-dark-red;
+          background: $primary-dark-purple;
           transition: 0.4s background ease-in;
         }
       }
@@ -78,7 +78,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         border: 2px solid #fff;
-        background: $primary-dark-red;
+        background: $primary-dark-purple;
         color: #fff;
         font-family: 'Oswald', sans-serif;
         font-weight: 100;

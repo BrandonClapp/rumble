@@ -27,7 +27,7 @@ form {
   input, select {
     font-size: 18px;
     background-color: lighten($primary-dark-blue, 80%);
-    border: 1px solid lighten($primary-dark-red, 10%);
+    border: 1px solid lighten($primary-dark-purple, 10%);
     color: #000;
     padding: 8px;
     width: 100%;
@@ -40,7 +40,7 @@ form {
 
   input[type="submit"] {
     width: auto;
-    background-color: $primary-dark-red;
+    background-color: $primary-dark-purple;
     border: 1px solid lighten($primary-dark-blue, 90%);
     color: #fff;
   }
@@ -60,7 +60,7 @@ form {
 .alt {
   color: #000;
   background-color: #fff;
-  border-color: 1px solid $primary-dark-red;
+  border-color: 1px solid $primary-dark-purple;
 }
 
 h1 {
@@ -94,6 +94,30 @@ h4 {
   margin: 20px 0 20px 0;
 }
 
+.heading {
+ margin: 20px 0 20px 0; 
+}
+
+.btn {
+  padding: 3px 5px;
+  font-size: 12px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.btn-default {
+  background-color: #ccc;
+  border: 1px solid black;
+  color: black;
+}
+
+.btn-primary {
+  background-color: darken($primary-dark-purple, 10%);
+  border: 1px solid lighten($primary-dark-purple, 60%);
+  color: lighten($primary-dark-purple, 60%);
+}
+
 table {
   width: 100%;
   font-size: 14px;
@@ -102,7 +126,7 @@ table {
     vertical-align: middle;
     border-color: inherit;
     text-align: left;
-    background-color: $primary-dark-red;
+    background-color: $primary-dark-purple;
     padding: 8px;
   }
 
@@ -118,7 +142,7 @@ table {
   }
 
   tr:nth-child(even) {
-    background-color: darken($primary-dark-red, 7%);
+    background-color: darken($primary-dark-purple, 7%);
   }
 
   tr:nth-child(odd) {
@@ -177,11 +201,11 @@ table {
   width: 100%;
   position: fixed;
   z-index: 0;
-  border-bottom: 3px solid darken($primary-dark-red, 10%);
+  border-bottom: 3px solid darken($primary-dark-purple, 10%);
 }
 
 .alert {
   width: 100%;
-  background-color: $primary-dark-red;
+  background-color: $primary-dark-purple;
   padding: 10px;
 }

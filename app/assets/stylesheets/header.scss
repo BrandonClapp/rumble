@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 .top-bar {
-    @include background-opacity($primary-dark-red, 0.7);
+    @include background-opacity($primary-dark-purple, 0.7);
 
     top: 0;
     right:0;
@@ -10,14 +10,14 @@
     position:fixed;
     z-index:99;
 
-    border-bottom: 3px solid darken($primary-dark-red, 10%);
+    border-bottom: 3px solid darken($primary-dark-purple, 10%);
 
     .logo {
         float: left;
         // @include background-opacity(white, 0.9);
-        // border-left: 3px solid darken($primary-dark-red, 10%);
-        // border-right: 3px solid darken($primary-dark-red, 10%);
-        // border-bottom: 3px solid darken($primary-dark-red, 10%);
+        // border-left: 3px solid darken($primary-dark-purple, 10%);
+        // border-right: 3px solid darken($primary-dark-purple, 10%);
+        // border-bottom: 3px solid darken($primary-dark-purple, 10%);
 
         padding-top: 20px;
 
