@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   def role_for(roster)
     membership = self.memberships.find { |m| m.roster == roster }
     if not membership.nil? and not membership.team_role.nil?
-      membership.team_role.humanize.titleize
+      membership.team_role
     end
   end
 

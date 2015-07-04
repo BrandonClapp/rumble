@@ -1,5 +1,13 @@
 class TeamPolicy < ApplicationPolicy
 
+  def new?
+    create?
+  end
+
+  def create?
+    
+  end
+
   def update?
     true
   end
@@ -8,13 +16,13 @@ class TeamPolicy < ApplicationPolicy
     update?
   end
 
-  def remove_user?
-    if not @user.nil?
-      @user.admin? or @user.community_manager?
-    else
-      false
-    end
-  end
+  # def remove_user?
+  #   if not @user.nil?
+  #     @user.admin? or @user.community_manager?
+  #   else
+  #     false
+  #   end
+  # end
 
   def join_team?
 

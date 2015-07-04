@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :teams do
-    get '/users/:id/destroy', to: 'teams#remove_user', as: :user_remove
+    get '/rosters/:roster_id/user/:id/destroy', to: 'rosters#remove_user', as: :remove_user
   end
 
   root 'pages#news'

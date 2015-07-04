@@ -16,19 +16,26 @@
         %table
           - @team.rosters.each do |roster|
             %h4= link_to roster.tournament.name, tournament_path(roster.tournament)
-            %tr
-              %th Member
-              %th Email
-              %th Team Role
-            - roster.users.each do |user|
-              %tr
-                %td= link_to user.name, user_path(user)
-                %td= user.email
-                %td= user.role_for roster
 
--#   - if policy(@team).remove_user?
--#     = link_to "Remove", team_user_remove_path(@team, member), data: { confirm: "Remove user #{member.name} from the team?" }
-      
+            - if roster.users.empty?
+              No members on this roster
+            - else
+              %tr
+                %th Member
+                %th Email
+                %th Roster Role
+                - if policy(roster).remove_user?
+                  %th 
+              - roster.users.each do |user|
+                %tr
+                  %td= link_to user.name, user_path(user)
+                  %td= user.email
+                  %td
+                    = user.role_for(roster).humanize.titleize unless user.role_for(roster).nil?
+                  - if policy(roster).remove_user? and user != current_user
+                    %td= link_to "Remove", team_remove_user_path(@team, roster, user), data: { confirm: "Remove user #{user.name} from the team?" }
+
+
       %h2 Latest Matches
       - if @team.matches.empty?
         No previous matches
