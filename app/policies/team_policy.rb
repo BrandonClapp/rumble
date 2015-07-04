@@ -9,7 +9,11 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def remove_user?
-    true
+    if not @user.nil?
+      @user.admin? or @user.community_manager?
+    else
+      false
+    end
   end
 
   class Scope < Scope

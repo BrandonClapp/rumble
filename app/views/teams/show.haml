@@ -25,7 +25,7 @@
                 = link_to member.name, user_path(member)
               %td= member.email
               %td
-                - if policy(@team).edit?
+                - if policy(@team).remove_user?
                   = link_to "Remove", team_user_remove_path(@team, member), data: { confirm: "Remove user #{member.name} from the team?" }
 
       %h2 Tournaments
@@ -38,10 +38,8 @@
             %th League
           - @team.tournaments.each do |tournament|
             %tr
-              %td
-                = link_to tournament.name, tournament_path(tournament)
-              %td
-                = link_to tournament.league.name, league_path(tournament.league)
+              %td= link_to tournament.name, tournament_path(tournament)
+              %td= link_to tournament.league.name, league_path(tournament.league)
       
       %h2 Latest Matches
       - if @team.matches.empty?
