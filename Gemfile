@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1.2"
 
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
@@ -13,7 +14,7 @@ gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'pundit'
 
 group :development, :test do
-  # gem 'byebug'
+  gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
