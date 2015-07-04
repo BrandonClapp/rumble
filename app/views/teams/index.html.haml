@@ -10,13 +10,13 @@
       %table
         %tr
           %th Team Name
-          %th Members
-          %th Tournaments
+          %th Rosters
+          -# %th Tournaments
         - @teams.each do |team|
           %tr
             %td= link_to team.name, team_path(team)
-            %td= team.users.count
-            %td= team.tournaments.count
+            %td= team.rosters.count
+            -# %td= team.tournaments.count
               
       = pluralize(@teams.count, "team")
 

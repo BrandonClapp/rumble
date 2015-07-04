@@ -9,8 +9,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # has_many :memberships, :dependent => :destroy
+  # has_many :teams, through: :memberships
+
   has_many :memberships, :dependent => :destroy
-  has_many :teams, through: :memberships
+  has_many :rosters, through: :memberships
+
+  has_and_belongs_to_many :rosters
 
   def is_member_of?(team)
     if !self.teams.empty?    

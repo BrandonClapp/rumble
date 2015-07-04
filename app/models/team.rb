@@ -1,8 +1,10 @@
 class Team < ActiveRecord::Base
-  has_many :memberships, :dependent => :destroy
-  has_many :users, through: :memberships
+  # has_many :memberships, :dependent => :destroy
+  # has_many :users, through: :memberships
 
-  has_and_belongs_to_many :tournaments
+  has_many :rosters
+
+  # has_and_belongs_to_many :tournaments
 
   def opponent_for(match)
     if match.initiating_team == self
