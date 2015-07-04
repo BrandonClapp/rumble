@@ -14,29 +14,19 @@
         No rosters
       - else
         %table
-          %tr
-            %th Tournament
-            %th Members
           - @team.rosters.each do |roster|
+            %h4= link_to roster.tournament.name, tournament_path(roster.tournament)
             %tr
-              %td= link_to roster.tournament.name, tournament_path(roster.tournament)
-              %td= roster.users.count
+              %th Member
+              %th Email
+              %th Team Role
+            - roster.users.each do |user|
+              %td= link_to user.name, user_path(user)
+              %td= user.email
+              %td Member
 
-              -#   - if policy(@team).remove_user?
-              -#     = link_to "Remove", team_user_remove_path(@team, member), data: { confirm: "Remove user #{member.name} from the team?" }
-
-      -# %h2 Tournaments
-      -# - if @team.tournaments.empty?
-      -#   No tournaments
-      -# - else
-      -#   %table
-      -#     %tr
-      -#       %th Tournament
-      -#       %th League
-      -#     - @team.tournaments.each do |tournament|
-      -#       %tr
-      -#         %td= link_to tournament.name, tournament_path(tournament)
-      -#         %td= link_to tournament.league.name, league_path(tournament.league)
+-#   - if policy(@team).remove_user?
+-#     = link_to "Remove", team_user_remove_path(@team, member), data: { confirm: "Remove user #{member.name} from the team?" }
       
       %h2 Latest Matches
       - if @team.matches.empty?
