@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
   has_many :rosters, through: :memberships
 
 
-  def is_member_of?(team)
-    if !self.teams.empty?    
-      self.teams.exists?(id: team.id)
+  def is_member_of?(roster)
+    if !self.rosters.empty?    
+      self.rosters.exists?(id: roster.id)
     else
       false
     end
