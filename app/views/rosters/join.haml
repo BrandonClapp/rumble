@@ -1,0 +1,17 @@
+.main-banner
+  .main-banner-film
+
+.container
+  .content
+    .dark.half.center
+
+      %h2= "Join Roster"
+      %p= "To join this roster, enter #{@team.name}'s password for the #{@roster.tournament.league.name} - #{@roster.tournament.name} roster."
+
+      %p
+        = form_tag(team_add_user_path(@team, @roster), method: "post") do
+          .form-group
+            %input{type: "text", placeholder: "super secret password"}
+
+          .form-group
+            = submit_tag("Join")

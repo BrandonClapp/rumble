@@ -99,11 +99,14 @@ h4 {
 }
 
 .btn {
-  padding: 3px 5px;
   font-size: 12px;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   cursor: default;
+
+  a {
+    padding: 6px 10px;
+  }
 }
 
 .btn-default {

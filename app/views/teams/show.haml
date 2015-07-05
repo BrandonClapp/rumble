@@ -16,7 +16,9 @@
           %table.tile.half{ class: index % 2 == 0 ? "left" : "right" }
             %caption
               = link_to "#{roster.tournament.league.name} - #{roster.tournament.name}", tournament_path(roster.tournament)
-              .btn.btn-primary.right Join
+              - if policy(roster).join?
+                .btn.btn-primary.right
+                  = link_to "Join", team_roster_join_path(@team, roster)
               .clear
 
             - if not roster.users.empty?
@@ -44,9 +46,6 @@
 
       - else
         No rosters
-
-        
-        
 
 
       %h3 Latest Matches
