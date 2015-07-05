@@ -6,33 +6,29 @@
     .dark
       %a= link_to "All Teams", teams_path
 
-      %h1= @team.name
+      %h1
+        = @team.name
 
-      %h2 Rosters
+      %h3 Rosters
 
-      - if @team.rosters.empty?
-        No rosters
-      - else
-        %table
-          - @team.rosters.each do |roster|
-            %h4.left= link_to roster.tournament.name, tournament_path(roster.tournament)
+      - if not @team.rosters.empty?
+        - @team.rosters.each_with_index do |roster, index|
+          %table.tile.half{ class: index % 2 == 0 ? "left" : "right" }
+            %caption
+              = link_to "#{roster.tournament.league.name} - #{roster.tournament.name}", tournament_path(roster.tournament)
+              .btn.btn-primary.right Join
+              .clear
 
-            .heading.btn.btn-primary.right Join
-            .clear
-
-            - if roster.users.empty?
-              No members on this roster
-            - else
+            - if not roster.users.empty?
               %tr
                 %th Member
-                %th Email
                 %th Roster Role
                 - if policy(roster).remove_user?
-                  %th 
+                  %th Admin
+
               - roster.users.each do |user|
                 %tr
                   %td= link_to user.name, user_path(user)
-                  %td= user.email
                   %td
                     = user.role_for(roster).humanize.titleize unless user.role_for(roster).nil?
                   - if policy(roster).remove_user?
@@ -40,8 +36,20 @@
                       -if user != current_user
                         = link_to "Remove", team_remove_user_path(@team, roster, user), data: { confirm: "Remove user #{user.name} from the team?" }
 
+            - else
+              %tr
+                %td No members on this roster
 
-      %h2 Latest Matches
+        .clear
+
+      - else
+        No rosters
+
+        
+        
+
+
+      %h3 Latest Matches
       - if @team.matches.empty?
         No previous matches
       - else

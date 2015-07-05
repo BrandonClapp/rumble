@@ -118,10 +118,23 @@ h4 {
   color: lighten($primary-dark-purple, 60%);
 }
 
+.btn-alternate {
+  background-color: darken($primary-dark-blue, 10%);
+  border: 1px solid lighten($primary-dark-blue, 60%);
+  color: lighten($primary-dark-blue, 60%); 
+}
+
 table {
   width: 100%;
   font-size: 14px;
   border: 1px solid lighten($primary-dark-purple, 60%);
+
+  caption {
+    text-align: left;
+    font-size: 16px;
+    font-family: $primary-font;
+    margin-bottom: 10px;
+  }
 
   thead, th, {
     vertical-align: middle;
@@ -191,6 +204,10 @@ table {
 
 .left {
   float:left;
+}
+
+.tile {
+  width: 49%;
 }
 
 .clear {

@@ -21,6 +21,7 @@
             %th Started
             %th Ends
             %th Teams
+            %th Admin
           - @league.tournaments.each do |tournament|
             %tr
               %td= link_to tournament.name, tournament_path(tournament)
@@ -28,3 +29,5 @@
               %td Start
               %td End
               %td= tournament.rosters.count
+              %td
+                %span.btn.btn-alternate Enroll Team
