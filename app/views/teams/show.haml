@@ -25,7 +25,7 @@
               %tr
                 %th Member
                 %th Roster Role
-                - if policy(roster).remove_user? or current_user.is_member_of? roster
+                - if policy(roster).remove_user? or (not current_user.nil? and current_user.is_member_of? roster)
                   %th Admin
 
               - roster.users.each do |user|
