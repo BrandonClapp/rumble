@@ -33,10 +33,11 @@
                   %td= link_to user.name, user_path(user)
                   %td
                     = user.role_for(roster).humanize.titleize unless user.role_for(roster).nil?
-                  - if policy(roster).remove_user? or user == current_user
+                  - if policy(roster).remove_user? or (not current_user.nil? and current_user.is_member_of? roster)
                     %td
-                      -if user != current_user and policy(roster).remove_user?
-                        = link_to "Remove", team_remove_user_path(@team, roster, user), data: { confirm: "Remove user #{user.name} from the team?" }
+                      -if policy(roster).remove_user?
+                        -if (not current_user.nil? and current_user.is_member_of? roster)
+                          = link_to "Remove", team_remove_user_path(@team, roster, user), data: { confirm: "Remove user #{user.name} from the team?" }
                       -if user == current_user
                         = link_to "Leave", team_remove_user_path(@team, roster, user), data: { confirm: "Leave this roster?" }
 
