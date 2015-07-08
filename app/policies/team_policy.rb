@@ -5,7 +5,7 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def create?
-    
+    not @user.nil?
   end
 
   def update?
