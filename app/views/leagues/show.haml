@@ -30,4 +30,5 @@
               %td End
               %td= tournament.rosters.count
               %td
-                %span.btn.btn-alternate Enroll Team
+                %span.btn.btn-primary 
+                  = link_to "Enroll Team", '#', data: { confirm: "Join this tournament?" }

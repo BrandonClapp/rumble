@@ -1,7 +1,8 @@
 class RosterPolicy < ApplicationPolicy
 
   def remove_user?
-    is_manager?
+    #is_manager?
+    true
   end
 
   def add_user?

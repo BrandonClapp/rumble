@@ -4,7 +4,9 @@
 .container
   .content
     %h3 Teams
-    = link_to "New Team", new_team_path
+
+    - if policy(Team).create?
+      = link_to "New Team", new_team_path
 
     .dark
       %table
