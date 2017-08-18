@@ -2,3 +2,5 @@
 
 # Ladder
 Gaming league, ladder, and tournament system.
+
+![Demo](/docs/gaming-league.png)
